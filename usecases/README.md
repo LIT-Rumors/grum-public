@@ -9,3 +9,6 @@ _Cleland-Huang, Jane, Michael Vierhauser, and Sean Bayley. "Dronology: An Incuba
  
 
 ### TurtleBot Robots
+
+TurtleBots are an open-source, ROS-based robot kit, frequently used to perform research in the area of robotics and CPS
+[https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
