@@ -22,6 +22,6 @@ Vierhauser, M., Marah, H., Garmendia, A., Cleland-Huang, J., & Wimmer, M. (2021,
 
 As part of our ongoing work, we have implemented Code generators for two different [use cases](/usecases/README.md)
 
-Framework Application [Use Case 1: Dronology (Java)](/usecases/dronology)
+Framework Application [Use Case 1: Dronology (Java)](/usecases)
 
-Framework Application [Use Case 2: TurtleBot3 Robots (ROS / Python)](/usecases/dronology)
+Framework Application [Use Case 2: TurtleBot3 Robots (ROS / Python)](/usecases)
