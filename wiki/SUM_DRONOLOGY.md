@@ -10,7 +10,7 @@
 
 ### The  Dronology MW:
 
-[Weaved Monitoring Model](/at.jku.se.monitoring.project/examples/monitoredsystems/at.jku.lit.grum.dronology.model/model/dronology_monitoring.mos)
+[Weaved Monitoring Model](/usecases/examples/monitoredsystems/at.jku.lit.grum.dronology.model/model/dronology_monitoring.mos)
 
 
 ### Constraints:
@@ -33,5 +33,5 @@
 
 ### The  Dronology GRuM Platform:
 
-[Generated Grum Platform](/examples/monitoredsystems/generated/dronology/)
+[Generated Grum Platform](/usecases/examples/monitoredsystems/generated/dronology/)
 
