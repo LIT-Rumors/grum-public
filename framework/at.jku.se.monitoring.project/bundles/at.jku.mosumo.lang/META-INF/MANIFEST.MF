@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: at.jku.mosumo.lang
+Bundle-ManifestVersion: 2
+Bundle-Name: at.jku.mosumo.lang
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: at.jku.mosumo.lang; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: at.jku.se.mosumo.mm,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.eclipse.emf.codegen.ecore,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.mwe.utils,
+ org.eclipse.xtext.xtext.generator;bundle-version="2.23.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: at.jku.mosumo.lang.serializer,
+ at.jku.mosumo.lang.generator,
+ at.jku.mosumo.lang.parser.antlr,
+ at.jku.mosumo.lang.services,
+ at.jku.mosumo.lang,
+ at.jku.mosumo.lang.parser.antlr.internal,
+ at.jku.mosumo.lang.formatting2,
+ at.jku.mosumo.lang.scoping,
+ at.jku.mosumo.lang.validation
+Import-Package: org.apache.log4j

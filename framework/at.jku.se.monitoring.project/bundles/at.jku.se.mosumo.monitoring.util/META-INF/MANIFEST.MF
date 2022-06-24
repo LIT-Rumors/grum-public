@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GRum Utils
+Bundle-SymbolicName: at.jku.se.mosumo.monitoring.util
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: at.jku.se.mosumo.monitoring.util
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.eclipse.paho.client.mqttv3,
+ at.jku.se.mosumo.tools.logging;bundle-version="1.0.0"
+Export-Package: at.jku.se.mosumo.monitoring.util,
+ measure,
+ mqtt,
+ validation
+Bundle-Vendor: LITRumors

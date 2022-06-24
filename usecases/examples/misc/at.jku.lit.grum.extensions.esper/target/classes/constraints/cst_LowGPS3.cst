@@ -1,0 +1,11 @@
+NAME=UnsafeGPS
+CONSTRAINT=
+select * from pattern
+[ every a=SystemHealth(status.toString() = "low") -> 
+
+(
+(timer:interval(30.05 sec) and  not b=SystemHealth(cast(b.status, string) = "ok" and b.id = a.id ))  and 
+(timer:interval(30.05 sec) and  not OperationMode(cast(mode, string) = "MANUAL" and id = a.id ))  
+ )
+ ]
+;

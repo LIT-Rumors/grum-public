@@ -1,0 +1,5 @@
+NAME=PlanCompletion
+CONSTRAINT=
+select * from pattern
+[ every a=FlightPlan(status.toString() = "PLANNED") -> (timer:interval(5 min 0.05 sec) and  not b=FlightPlan(cast(b.status, string) = "COMPLETED" and b.id = a.id ))   ]
+;

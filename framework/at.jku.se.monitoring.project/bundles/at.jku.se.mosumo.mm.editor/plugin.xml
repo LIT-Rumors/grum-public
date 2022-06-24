@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Monitoring -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="Monitoring.presentation.MonitoringModelWizardID"
+            name="%_UI_MonitoringModelWizard_label"
+            class="Monitoring.presentation.MonitoringModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MonitoringModelFile.gif">
+         <description>%_UI_MonitoringModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Monitoring -->
+      <editor
+            id="Monitoring.presentation.MonitoringEditorID"
+            name="%_UI_MonitoringEditor_label"
+            icon="icons/full/obj16/MonitoringModelFile.gif"
+            extensions="monitoring"
+            class="Monitoring.presentation.MonitoringEditor"
+            contributorClass="Monitoring.presentation.MonitoringActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

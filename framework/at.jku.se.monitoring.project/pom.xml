@@ -1,0 +1,20 @@
+<project>
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>at.jku.se.monitoring.project</groupId>
+ <artifactId>at.jku.se.monitoring.project.root</artifactId>
+ <version>1.0.0-SNAPSHOT</version>
+ <packaging>pom</packaging>
+
+<parent>
+	<groupId>at.jku.se.monitoring.project</groupId>
+	<artifactId>at.jku.se.monitoring.tycho.configuration</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<relativePath>./releng/at.jku.se.monitoring.tycho.configuration</relativePath>
+</parent> 
+
+ <modules>
+ 	 <module>bundles</module>
+ 	 <module>releng</module>
+ 	 <module>features</module>
+ </modules>
+</project>

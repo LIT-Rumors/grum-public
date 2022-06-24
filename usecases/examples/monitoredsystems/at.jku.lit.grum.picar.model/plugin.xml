@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated picar -->
+      <package
+            uri="http://www.lit.jku.at/grum/picar"
+            class="at.jku.lit.grum.picar.model.picar.PicarPackage"
+            genModel="model/picar.genmodel"/>
+   </extension>
+
+</plugin>

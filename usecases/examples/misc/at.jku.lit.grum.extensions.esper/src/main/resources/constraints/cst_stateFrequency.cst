@@ -1,0 +1,5 @@
+NAME=StateFrequency
+CONSTRAINT=
+select * from  pattern 
+[ every a=DroneState -> (timer:interval(2.1 sec) and not DroneState(id=a.id))]
+;

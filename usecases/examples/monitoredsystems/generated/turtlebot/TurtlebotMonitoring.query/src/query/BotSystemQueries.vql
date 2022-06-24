@@ -1,0 +1,56 @@
+package query;
+
+import "http://www.lit.jku.at/grum/turtlebot";
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+
+//maximum moving speed must be < than 0.15
+pattern maxVelocity(bot : TurtleBot, spd : EFloatObject) {
+	TurtleBot.velocity.speed(bot,spd);
+	check(spd > 0.25);
+} 
+
+
+//battery level > 20% 
+
+
+  pattern minBatteryLevel(bot : TurtleBot, blevel : EFloatObject) {
+	TurtleBot.batterystatus.percentage(bot,blevel);
+	check(blevel < 5);
+} 
+
+   //battery voltage 
+   pattern batteryVoltage(bot : TurtleBot, bvoltage : EFloatObject) {
+	TurtleBot.batterystatus.voltage(bot,bvoltage);
+	check(bvoltage < 10.5 || bvoltage > 12.5);
+} 
+
+
+   //battery voltage  
+   pattern powerSupplyStatus(bot : TurtleBot, batteryStatus : EByteObject) {
+	TurtleBot.batterystatus.powerSupplyTemperature(bot,batteryStatus);
+	check(batteryStatus.intValue()> 1);
+} 
+
+     pattern diagnosticsError(bot : TurtleBot, diag1 : EIntegerObject, diag2 : EIntegerObject, diag3 : EIntegerObject, diag4 : EIntegerObject, diag5 : EIntegerObject) {
+	TurtleBot.diagnostics.levelOfOperationActuator(bot,diag1);
+	TurtleBot.diagnostics.levelOfOperationAnalogButton(bot,diag2);
+	TurtleBot.diagnostics.levelOfOperationIMUSensor(bot,diag3);
+	TurtleBot.diagnostics.levelOfOperationLidarSensor(bot,diag4);
+	TurtleBot.diagnostics.levelOfOperationPowerSystem(bot,diag5);
+	check(diag1 == 2  ||  diag2 == 2  || diag3 == 2  || diag4 == 2   || diag5 == 2  );
+} 
+
+
+   //battery voltage  
+   pattern co2value(bot : TurtleBot, sensorval : EDouble) {
+	TurtleBot.sensor.partsPerMillion(bot,sensorval);
+	check(sensorval > 800); 
+} 
+ // min sep. distance of 1 men
+   pattern distanceValue(bot : TurtleBot, dist : EFloatObject) {
+	TurtleBot.laserscan.smallestRange(bot,dist);
+	check(dist < 0.05); 
+} 
+
+ 

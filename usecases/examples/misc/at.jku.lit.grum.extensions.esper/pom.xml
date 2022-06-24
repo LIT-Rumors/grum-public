@@ -1,0 +1,109 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>at.jku.lit.grum.extensions</groupId>
+	<artifactId>at.jku.lit.grum.extensions.esper</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>at.jku.lit.grum.extensions.ConstraintRunner</mainClass>
+					<arguments>
+						<argument>foo</argument>
+						<argument>bar</argument>
+					</arguments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.14.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.paho</groupId>
+			<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.13.0</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.espertech</groupId>
+			<artifactId>esper</artifactId>
+			<version>7.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>at.jku.se.mosumo.metamodel</groupId>
+			<artifactId>DronologyMonitoring.middleware</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>at.jku.lit.grum.dronology.model</groupId>
+			<artifactId>at.jku.lit.grum.dronology.model</artifactId>
+			<version>0.0.1</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/libs/at.jku.lit.grum.dronology.model_0.0.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>at.jku.se.mosumo.monitoring.util</groupId>
+			<artifactId>at.jku.se.mosumo.monitoring.util</artifactId>
+			<version>1.0.0.202108190740</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/libs/at.jku.se.mosumo.monitoring.util_1.0.0.202108190740.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>at.jku.se.mosumo.mm</groupId>
+			<artifactId>at.jku.se.mosumo.mm</artifactId>
+			<version>0.1.0.202108190740</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/libs/at.jku.se.mosumo.mm_0.1.0.202108190740.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>at.jku.se.mosumo.tools.logging</groupId>
+			<artifactId>at.jku.se.mosumo.tools.logging</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/libs/at.jku.se.mosumo.tools.logging_1.0.0-SNAPSHOT.jar</systemPath>
+		</dependency>
+
+
+	</dependencies>
+
+</project>

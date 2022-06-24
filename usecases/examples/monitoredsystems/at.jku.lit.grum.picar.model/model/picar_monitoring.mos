@@ -1,0 +1,51 @@
+MOConfig PicarConf {
+	namespace "http://www.jku.at/monitoring/picar"
+    projectName "PicarProject"
+    defaultServer "localServer"
+    ePackage picar
+    
+    servers{ 
+        Server "localServer" {
+        connectionURL "tcp://localhost" 
+        connectionOptions 
+        	  ConnectionOptions {
+		        automaticReconnect true
+		        cleanSession true
+		        connectionTimeOut 100
+		        setMaxInflight 5000
+        	  }
+        }
+ 	}
+   system
+   MoSystem{
+   		eClass "picar.PicarSystem"
+	   	agents {
+	   		MOAgent "Picar"{
+	   			topic "picar"
+	   			sync true
+	   			eClass "picar.Picar" 
+	   			server localServer
+	   			elements {
+	   				MOProperty "location" {
+	   					topic "location"
+	   					sync true
+	   					eClass "picar.Location"
+	   				},
+	   				MOProperty "status" {
+	   					topic "status"
+	   					sync true
+	   					eClass "picar.Status"
+	   				}
+	   			}
+	   			
+	   		}
+	   	}
+	}	
+}
+
+
+
+
+
+
+

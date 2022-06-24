@@ -1,0 +1,30 @@
+<project>
+ 	<modelVersion>4.0.0</modelVersion>
+    <groupId>at.jku.se.monitoring.project</groupId>
+    <artifactId>at.jku.se.monitoring.project.bundles</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>at.jku.se.monitoring.project</groupId>
+        <artifactId>at.jku.se.monitoring.project.root</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+ 	
+ 	<modules>
+   		 <module>at.jku.mosumo.generator.api.java</module>
+         <module>at.jku.mosumo.generator.framework</module>
+         <module>at.jku.se.mosumo.generator.api.ros</module>
+    	 <module>at.jku.se.mosumo.mm</module>
+		 <module>at.jku.se.mosumo.mm.edit</module>
+		 <module>at.jku.se.mosumo.mm.editor</module>
+   		 <module>at.jku.se.mosumo.monitoring.util</module>
+    
+         <module>at.jku.se.mosumo.tools.logging</module>     
+         <module>at.jku.mosumo.lang</module>   
+         <module>at.jku.mosumo.lang.ide</module>
+         <module>at.jku.mosumo.lang.tests</module>
+         <module>at.jku.mosumo.lang.ui</module>
+         <module>at.jku.mosumo.lang.ui.tests</module>
+  </modules>
+</project>

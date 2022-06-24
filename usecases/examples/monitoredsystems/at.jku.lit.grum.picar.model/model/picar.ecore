@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="picar" nsURI="http://www.lit.jku.at/grum/picar" nsPrefix="picar">
+  <eClassifiers xsi:type="ecore:EClass" name="PicarSystem" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="picars" upperBound="-1"
+        eType="#//Picar" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Picar" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" lowerBound="1"
+        eType="#//Location" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="status" lowerBound="1"
+        eType="#//Status" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startlocation" lowerBound="1"
+        eType="#//Location" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="geofence_range" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Status" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialized" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationmode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdableElement" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
+        iD="true"/>
+  </eClassifiers>
+</ecore:EPackage>

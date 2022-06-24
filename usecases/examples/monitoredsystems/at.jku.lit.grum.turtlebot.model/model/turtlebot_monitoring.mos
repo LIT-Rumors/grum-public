@@ -1,0 +1,81 @@
+MOConfig PicarConf {
+	namespace "http://www.lit.jku.at/grum/turtlebot"
+    projectName "TurtlebotMonitoring"
+    defaultServer "localServer"
+    ePackage turtlebot
+    
+    servers{ 
+        Server "localServer" {
+        	 
+       
+        connectionURL "tcp://localhost" 
+        connectionOptions 
+        	  ConnectionOptions {
+		        automaticReconnect true
+		        cleanSession true
+		        connectionTimeOut 100
+		        setMaxInflight 5000
+        	  }
+        }
+ 	}
+ 	 
+   system
+   MoSystem{
+   		eClass "turtlebot.BotSystem"
+	   	agents {
+	   		MOAgent "TurtleBot"{
+	   			topic "turtlebot"
+	   			sync true
+	   			eClass "turtlebot.TurtleBot"
+	   			server localServer
+	   			elements {
+	   				MOProperty "batterystatus" {
+	   					topic "batterystatus"
+	   					sync true
+	   					eClass "turtlebot.BatteryStatus"
+	   				},
+	   				MOProperty "diagnostics" {
+	   					topic "diagnostics"
+	   					sync true
+	   					eClass "turtlebot.Diagnostics"
+	   				},
+	   				MOProperty "jointstate" {
+	   					topic "jointstate"
+	   					sync true
+	   					eClass "turtlebot.JointState"
+	   				},
+	   				MOProperty "laserscan" {
+	   					topic "laserscan"
+	   					sync true
+	   					eClass "turtlebot.LaserScan"
+	   				},
+	   				MOProperty "magneticfield" {
+	   					topic "magneticfield"
+	   					sync true
+	   					eClass "turtlebot.MagneticField"
+	   				},
+	   				MOProperty "odometry" {
+	   					topic "odometry"
+	   					sync true
+	   					eClass "turtlebot.Odometry"
+	   				},
+	   				MOProperty "sensor" {
+	   					topic "sensor"
+	   					sync true
+	   					eClass "turtlebot.Sensor"
+	   				},
+	   				MOProperty "velocity" {
+	   					topic "velocity"
+	   					sync true
+	   					eClass "turtlebot.Velocity"
+	   				},
+	   			 MOProperty "versioninfo" {
+	   					topic "versioninfo"
+	   					sync true
+	   					eClass "turtlebot.VersionInfo"
+	   				}
+	   			}
+	   		}
+	   	}
+	}	
+}

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?>
+<target name="at.jku.se.monitoring">
+	<locations>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="http://download.eclipse.org/releases/2020-09"/>
+			<unit id="org.eclipse.emf.sdk.feature.group" version="2.23.0.v20200822-0801"/>
+			<unit id="org.eclipse.m2e.feature.feature.group" version="1.16.1.20200710-1008"/>
+			<unit id="org.eclipse.fx.runtime.min.feature.feature.group" version="3.6.0.201907240103"/>
+			<unit id="org.eclipse.pde.feature.group" version="3.14.500.v20200902-1800"/>
+			<unit id="org.eclipse.sdk.feature.group" version="4.17.0.v20200902-1800"/>
+			<unit id="org.eclipse.equinox.sdk.feature.group" version="3.20.300.v20200828-1034"/>
+			<unit id="org.eclipse.xtext.sdk.feature.group" version="2.23.0.v20200831-0926"/>
+			<unit id="org.eclipse.egit.feature.group" version="5.9.0.202009080501-r"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="https://download.eclipse.org/tools/orbit/downloads/2021-06"/>
+			<unit id="org.apache.logging.log4j" version="2.8.2.v20200818-1118"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="http://download.eclipse.org/viatra/updates/release/latest"/>
+			<unit id="org.eclipse.viatra.query.sdk.feature.source.feature.group" version="2.7.0.202203161540"/>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.apache.aries.spifly</groupId>
+					<artifactId>org.apache.aries.spifly.dynamic.bundle</artifactId>
+					<version>1.3.3</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+			<instructions><![CDATA[
+Bundle-Name:           Bundle derived from maven artifact ${mvnGroupId}:${mvnArtifactId}:${mvnVersion}
+version:               ${version_cleanup;${mvnVersion}}
+Bundle-SymbolicName:   wrapped.${mvnGroupId}.${mvnArtifactId}
+Bundle-Version:        ${version}
+Import-Package:        *;resolution:=optional
+Export-Package:        *;version="${version}";-noimport:=true
+DynamicImport-Package: *
+]]></instructions>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.apache.aries</groupId>
+					<artifactId>org.apache.aries.util</artifactId>
+					<version>1.1.3</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+			<instructions><![CDATA[
+Bundle-Name:           Bundle derived from maven artifact ${mvnGroupId}:${mvnArtifactId}:${mvnVersion}
+version:               ${version_cleanup;${mvnVersion}}
+Bundle-SymbolicName:   wrapped.${mvnGroupId}.${mvnArtifactId}
+Bundle-Version:        ${version}
+Import-Package:        *;resolution:=optional
+Export-Package:        *;version="${version}";-noimport:=true
+DynamicImport-Package: *
+]]></instructions>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.ow2.asm</groupId>
+					<artifactId>asm-util</artifactId>
+					<version>9.1</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.ow2.asm</groupId>
+					<artifactId>asm</artifactId>
+					<version>9.1</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.ow2.asm</groupId>
+					<artifactId>asm-tree</artifactId>
+					<version>9.1</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.ow2.asm</groupId>
+					<artifactId>asm-analysis</artifactId>
+					<version>9.1</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.ow2.asm</groupId>
+					<artifactId>asm-commons</artifactId>
+					<version>9.1</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.jboss.forge.roaster</groupId>
+					<artifactId>roaster-api</artifactId>
+					<version>2.23.0.Final</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+			<instructions><![CDATA[
+Bundle-Name:           Bundle derived from maven artifact ${mvnGroupId}:${mvnArtifactId}:${mvnVersion}
+version:               ${version_cleanup;${mvnVersion}}
+Bundle-SymbolicName:   ${mvnGroupId}.${mvnArtifactId};singleton:=true
+Bundle-Version:        ${version_cleanup;${mvnVersion}}
+Import-Package:        *;resolution:=optional
+Export-Package:        org.jboss.forge.roaster.spi;common=split;version="${version}";mandatory:=common;-noimport:=true, *;version="${version}";-noimport:=true
+DynamicImport-Package: *
+Require-Capability: osgi.extender; filter:="(osgi.extender=osgi.serviceloader.processor)", osgi.serviceloader; filter:="(osgi.serviceloader=org.jboss.forge.roaster.spi.JavaParser)"; cardinality:=multiple
+]]></instructions>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.jboss.forge.roaster</groupId>
+					<artifactId>roaster-jdt</artifactId>
+					<version>2.23.0.Final</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+			<instructions><![CDATA[
+Bundle-Name:           Bundle derived from maven artifact ${mvnGroupId}:${mvnArtifactId}:${mvnVersion}
+version:               ${version_cleanup;${mvnVersion}}
+Bundle-SymbolicName:   ${mvnGroupId}.${mvnArtifactId};singleton:=true
+Bundle-Version:        ${version_cleanup;${mvnVersion}}
+Require-Bundle: org.jboss.forge.roaster.roaster-api
+Import-Package:        *;resolution:=optional
+Export-Package:        org.jboss.forge.roaster.spi;version="${version}", *;version="${version}";-noimport:=true
+DynamicImport-Package: *
+Require-Capability: osgi.extender; filter:="(osgi.extender=osgi.serviceloader.registrar)"
+Provide-Capability: osgi.serviceloader; osgi.serviceloader=org.jboss.forge.roaster.spi.JavaParser
+]]></instructions>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.eclipse.paho</groupId>
+					<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+					<version>1.2.5</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+			<instructions><![CDATA[
+Bundle-Name:           Bundle derived from maven artifact ${mvnGroupId}:${mvnArtifactId}:${mvnVersion}
+version:               ${version_cleanup;${mvnVersion}}
+Bundle-SymbolicName:   ${mvnGroupId}.${mvnArtifactId}
+Bundle-Version:        ${version}
+Import-Package:        *;resolution:=optional
+Export-Package:        *;version="${version}";-noimport:=true
+DynamicImport-Package: *
+]]></instructions>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-core</artifactId>
+					<version>2.10.0</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-databind</artifactId>
+					<version>2.10.0</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.emfjson</groupId>
+					<artifactId>emfjson-jackson</artifactId>
+					<version>1.3.0</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-annotations</artifactId>
+					<version>2.10.0</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.apache.commons</groupId>
+					<artifactId>commons-lang3</artifactId>
+					<version>3.12.0</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>commons-io</groupId>
+					<artifactId>commons-io</artifactId>
+					<version>2.11.0</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+	</locations>
+</target>

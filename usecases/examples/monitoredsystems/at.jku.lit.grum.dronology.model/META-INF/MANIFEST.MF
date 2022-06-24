@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: at.jku.lit.grum.dronology.model;singleton:=true
+Automatic-Module-Name: at.jku.lit.grum.dronology.model
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: at.jku.lit.grum.dronology.model.dronology,
+ at.jku.lit.grum.dronology.model.dronology.impl,
+ at.jku.lit.grum.dronology.model.dronology.util
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy

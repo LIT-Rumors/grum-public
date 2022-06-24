@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/at.jku.lit.grum.dronology.model/src-gen" creationIcons="false"
+    editDirectory="/at.jku.lit.grum.dronology.model.edit/src-gen" editorDirectory="/at.jku.lit.grum.dronology.model.editor/src-gen"
+    modelPluginID="at.jku.lit.grum.dronology.model" modelName="Dronology" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>dronology.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Dronology" basePackage="at.jku.lit.grum.dronology.model" disposableProviderFactory="true"
+      ecorePackage="dronology.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dronology.ecore#//FlightPlanStatus">
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//FlightPlanStatus/PLANNED"/>
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//FlightPlanStatus/FLYING"/>
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//FlightPlanStatus/COMPLETED"/>
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//FlightPlanStatus/ON_HOLD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dronology.ecore#//SystemStatus">
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//SystemStatus/STANDBY"/>
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//SystemStatus/UNINIT"/>
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//SystemStatus/BOOT"/>
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//SystemStatus/CALIBRATING"/>
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//SystemStatus/ACTIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//SystemStatus/CRITICAL"/>
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//SystemStatus/EMERGENCY"/>
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//SystemStatus/POWEROFF"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dronology.ecore#//FlightMode">
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//FlightMode/GUIDED"/>
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//FlightMode/STABILIZE"/>
+      <genEnumLiterals ecoreEnumLiteral="dronology.ecore#//FlightMode/AUTO"/>
+    </genEnums>
+    <genClasses ecoreClass="dronology.ecore#//DroneSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//DroneSystem/drones"/>
+    </genClasses>
+    <genClasses ecoreClass="dronology.ecore#//Drone">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//Drone/dronestate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//Drone/dronecommand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//Drone/homelocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//Drone/startupchecks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Drone/geofenceDistance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//Drone/operationmode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//Drone/flightplan"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//Drone/systemhealth"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//Drone/flightcontrollerdata"/>
+    </genClasses>
+    <genClasses ecoreClass="dronology.ecore#//BatteryStatus">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//BatteryStatus/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//BatteryStatus/voltage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//BatteryStatus/current"/>
+    </genClasses>
+    <genClasses ecoreClass="dronology.ecore#//Systemhealth">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Systemhealth/status"/>
+    </genClasses>
+    <genClasses ecoreClass="dronology.ecore#//Dronestate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//Dronestate/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//Dronestate/batterystatus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Dronestate/armed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Dronestate/groundspeed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Dronestate/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Dronestate/armable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Dronestate/status"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dronology.ecore#//IdableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//IdableElement/id"/>
+    </genClasses>
+    <genClasses ecoreClass="dronology.ecore#//Operationmode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Operationmode/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Operationmode/isInMission"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Operationmode/missionName"/>
+    </genClasses>
+    <genClasses ecoreClass="dronology.ecore#//FlightControllerData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//FlightControllerData/num_satellites"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//FlightControllerData/eph"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//FlightControllerData/epv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//FlightControllerData/roll"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//FlightControllerData/pitch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//FlightControllerData/yaw"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//FlightControllerData/fix_type"/>
+    </genClasses>
+    <genClasses ecoreClass="dronology.ecore#//Dronecommand">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Dronecommand/commandid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Dronecommand/timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Dronecommand/command"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Dronecommand/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Dronecommand/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Dronecommand/z"/>
+    </genClasses>
+    <genClasses ecoreClass="dronology.ecore#//FlightPlan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//FlightPlan/startTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//FlightPlan/endTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//FlightPlan/flightID"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//FlightPlan/startLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronology.ecore#//FlightPlan/endLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//FlightPlan/status"/>
+    </genClasses>
+    <genClasses ecoreClass="dronology.ecore#//Startupchecks">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Startupchecks/armingstatus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Startupchecks/systemstatus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Startupchecks/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Startupchecks/num_satellites"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//Startupchecks/armable"/>
+    </genClasses>
+    <genClasses ecoreClass="dronology.ecore#//LLACoordinate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//LLACoordinate/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//LLACoordinate/z"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//LLACoordinate/x"/>
+    </genClasses>
+    <genClasses ecoreClass="dronology.ecore#//StringToStringMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//StringToStringMap/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronology.ecore#//StringToStringMap/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

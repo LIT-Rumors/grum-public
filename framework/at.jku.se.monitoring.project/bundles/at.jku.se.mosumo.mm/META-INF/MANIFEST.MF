@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GRuM MetaModel
+Bundle-SymbolicName: at.jku.se.mosumo.mm;singleton:=true
+Automatic-Module-Name: at.jku.se.mosumo.mm
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: LITRumors
+Bundle-Localization: plugin
+Export-Package: Monitoring,
+ Monitoring.impl,
+ Monitoring.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.codegen.ecore;bundle-version="2.23.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-11

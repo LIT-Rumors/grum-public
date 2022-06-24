@@ -1,0 +1,56 @@
+package query;
+
+import "http://www.lit.jku.at/grum/dronology"
+import "http://www.eclipse.org/emf/2002/Ecore"
+import java ^java.util.Map
+import java query.TestUtil
+
+pattern altitudeLimit(drone : Drone, altitude : EDoubleObject) {
+	Drone.dronestate.location.z(drone, altitude);
+	check(altitude > 50);
+}
+
+pattern batteryLevel(drone : Drone, level : EDoubleObject) {
+	Drone.dronestate.batterystatus.voltage(drone, level);
+	check(level < 10);
+}
+
+pattern speedLimit(drone : Drone, groundSpeed : java Double) {
+	Drone.dronestate.groundspeed(drone, groundSpeed);
+	check(groundSpeed > 15);
+}
+
+pattern startupCheckSystemStatus(drone : Drone, status : SystemStatus) {
+	Drone.startupchecks.systemstatus(drone, status);
+	check(status !=
+	at.jku.lit.grum.dronology.model.dronology.SystemStatus.STANDBY);
+}
+
+pattern startupCheckArming(drone : Drone, armable : java Boolean) {
+	Drone.startupchecks.armable(drone, armable);
+	check(! armable);
+}
+
+pattern waypointCheck(drone : Drone, command : EString, latitude : java
+Double, longitude : java Double, altitude : java Double) {
+	Drone.dronecommand.command(drone, command);
+	Drone.dronecommand.x(drone, latitude);
+	Drone.dronecommand.y(drone, longitude);
+	Drone.dronecommand.z(drone, altitude);
+	check(!(command != "gotoLocation" ||
+	TestUtil.test(latitude, longitude, altitude)));
+}
+
+pattern satGPSCheck(drone : Drone, sats : java Double) {
+	Drone.flightcontrollerdata.num_satellites(drone, sats);
+	Drone.flightcontrollerdata.fix_type(drone, fix_type);
+	check(sats < 10 && fix_type == 0);
+}
+
+pattern satGPSCheckOK(drone : Drone, sats : java Double) {
+	Drone.flightcontrollerdata.num_satellites(drone, sats);
+	//Drone.flightcontrollerdata.fix_type(drone, fix_type);
+	check(sats >= 10);
+}
+
+

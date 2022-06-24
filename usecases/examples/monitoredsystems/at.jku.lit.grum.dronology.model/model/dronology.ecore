@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dronology" nsURI="http://www.lit.jku.at/grum/dronology" nsPrefix="dronology">
+  <eClassifiers xsi:type="ecore:EClass" name="DroneSystem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drones" upperBound="-1"
+        eType="#//Drone" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Drone" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dronestate" eType="#//Dronestate"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dronecommand" eType="#//Dronecommand"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="homelocation" eType="#//LLACoordinate"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startupchecks" eType="#//Startupchecks"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="geofenceDistance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"
+        defaultValueLiteral="0.0" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operationmode" eType="#//Operationmode"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flightplan" eType="#//FlightPlan"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemhealth" eType="#//Systemhealth"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flightcontrollerdata" eType="#//FlightControllerData"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BatteryStatus">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="voltage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="current" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Systemhealth" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dronestate" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" lowerBound="1"
+        eType="#//LLACoordinate" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="batterystatus" lowerBound="1"
+        eType="#//BatteryStatus" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="armed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="groundspeed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//FlightMode"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="armable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdableElement" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operationmode" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInMission" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="missionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlightControllerData" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="num_satellites" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eph" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="epv" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roll" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pitch" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="yaw" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fix_type" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dronecommand" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commandid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//LongObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="command" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="z" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FlightPlanStatus">
+    <eLiterals name="PLANNED" value="1" literal="PLANNED"/>
+    <eLiterals name="FLYING" value="2" literal="FLYING"/>
+    <eLiterals name="COMPLETED" literal="COMPLETED"/>
+    <eLiterals name="ON_HOLD" literal="ON_HOLD"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlightPlan" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startTime" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Long"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endTime" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Long"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="flightID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startLocation" eType="#//LLACoordinate"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endLocation" eType="#//LLACoordinate"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//FlightPlanStatus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Startupchecks" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="armingstatus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="systemstatus" eType="#//SystemStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//FlightMode"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="num_satellites" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="armable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SystemStatus">
+    <eLiterals name="STANDBY">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="System is grounded and on standby. It can be launched any time."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="UNINIT" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Uninitialized system, state is unknown"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="BOOT" value="2" literal="BOOT">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="System is booting up"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CALIBRATING" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="System is calibrating and not flight-ready"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ACTIVE" value="4">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="System is active and might be already airborne. Motors are engaged."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CRITICAL" value="5">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="System is in a non-normal flight mode. It can however still navigate."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="EMERGENCY" value="6">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="System is in a non-normal flight mode. It lost control over parts or over the whole airframe. It is in mayday and going down."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="POWEROFF" value="7">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="System just initialized its power-down sequence, will shut down now."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LLACoordinate" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="z" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FlightMode">
+    <eLiterals name="GUIDED" value="1"/>
+    <eLiterals name="STABILIZE" value="2" literal="STABILIZE"/>
+    <eLiterals name="AUTO"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringToStringMap" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+  </eClassifiers>
+</ecore:EPackage>

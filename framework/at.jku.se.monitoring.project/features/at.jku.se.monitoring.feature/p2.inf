@@ -1,0 +1,75 @@
+# Set start level for org.apache.aries.util
+requires.0.namespace = org.eclipse.equinox.p2.iu
+requires.0.name = org.apache.aries.util.fragment
+requires.0.range = 1.0.0
+
+# Set start level for org.apache.aries.spifly.dynamic.bundle
+requires.1.namespace = org.eclipse.equinox.p2.iu
+requires.1.name = org.apache.aries.spifly.dynamic.bundle.fragment
+requires.1.range = 1.0.0
+
+# Set start level for org.jboss.forge.roaster.roaster-api
+requires.2.namespace = org.eclipse.equinox.p2.iu
+requires.2.name = org.jboss.forge.roaster.roaster-api.fragment
+requires.2.range = 1.0.0
+
+# Set start level for org.jboss.forge.roaster.roaster-jdt
+requires.3.namespace = org.eclipse.equinox.p2.iu
+requires.3.name = org.jboss.forge.roaster.roaster-jdt.fragment
+requires.3.range = 1.0.0
+
+#Definitions org.apache.aries.util
+units.0.id = org.apache.aries.util.fragment
+units.0.version = 1.0.0
+units.0.singleton = true
+units.0.provides.0.namespace = org.eclipse.equinox.p2.iu
+units.0.provides.0.name = org.apache.aries.util.fragment
+units.0.provides.0.version = 1.0.0
+units.0.instructions.configure = setStartLevel(startLevel:1);markStarted(started: true);
+units.0.hostRequirements.0.namespace = org.eclipse.equinox.p2.iu
+units.0.hostRequirements.0.name = org.apache.aries.util
+units.0.hostRequirements.0.version = 0.0.0
+units.0.instructions.install = installBundle(bundle:${artifact})
+units.0.instructions.uninstall = uninstallBundle(bundle:${artifact})
+
+#Definitions org.apache.aries.spifly.dynamic.bundle
+units.1.id = org.apache.aries.spifly.dynamic.bundle.fragment
+units.1.version = 1.0.0
+units.1.singleton = true
+units.1.provides.0.namespace = org.eclipse.equinox.p2.iu
+units.1.provides.0.name = org.apache.aries.spifly.dynamic.bundle.fragment
+units.1.provides.0.version = 1.0.0
+units.1.instructions.configure = setStartLevel(startLevel:1);markStarted(started: true);
+units.1.hostRequirements.0.namespace = org.eclipse.equinox.p2.iu
+units.1.hostRequirements.0.name = org.apache.aries.spifly.dynamic.bundle
+units.1.hostRequirements.0.version = 0.0.0
+units.1.instructions.install = installBundle(bundle:${artifact})
+units.1.instructions.uninstall = uninstallBundle(bundle:${artifact})
+
+#Definitions org.jboss.forge.roaster.roaster-api
+units.2.id = org.jboss.forge.roaster.roaster-api.fragment
+units.2.version = 1.0.0
+units.2.singleton = true
+units.2.provides.0.namespace = org.eclipse.equinox.p2.iu
+units.2.provides.0.name = org.jboss.forge.roaster.roaster-api.fragment
+units.2.provides.0.version = 1.0.0
+units.2.instructions.configure = setStartLevel(startLevel:2);markStarted(started: true);
+units.2.hostRequirements.0.namespace = org.eclipse.equinox.p2.iu
+units.2.hostRequirements.0.name = org.jboss.forge.roaster.roaster-api
+units.2.hostRequirements.0.version = 0.0.0
+units.2.instructions.install = installBundle(bundle:${artifact})
+units.2.instructions.uninstall = uninstallBundle(bundle:${artifact})
+
+#Definitions org.jboss.forge.roaster.roaster-jdt
+units.3.id = org.jboss.forge.roaster.roaster-jdt.fragment
+units.3.version = 1.0.0
+units.3.singleton = true
+units.3.provides.0.namespace = org.eclipse.equinox.p2.iu
+units.3.provides.0.name = org.jboss.forge.roaster.roaster-jdt.fragment
+units.3.provides.0.version = 1.0.0
+units.3.instructions.configure = setStartLevel(startLevel:2);markStarted(started: true);
+units.3.hostRequirements.0.namespace = org.eclipse.equinox.p2.iu
+units.3.hostRequirements.0.name = org.jboss.forge.roaster.roaster-jdt
+units.3.hostRequirements.0.version = 0.0.0
+units.3.instructions.install = installBundle(bundle:${artifact})
+units.3.instructions.uninstall = uninstallBundle(bundle:${artifact})

@@ -1,0 +1,73 @@
+MOConfig PicarConf {
+	namespace "http://www.lit.jku.at/grum/dronology"
+    projectName "DronologyMonitoring"
+    defaultServer "localServer"
+    ePackage dronology
+    
+    servers{ 
+        Server "localServer" {
+        	 
+       
+        connectionURL "tcp://localhost" 
+        connectionOptions 
+        	  ConnectionOptions {
+		        automaticReconnect true
+		        cleanSession true
+		        connectionTimeOut 100
+		        setMaxInflight 5000
+        	  }
+        }
+ 	}
+ 	 
+   system
+   MoSystem{
+   		eClass "dronology.DroneSystem"
+	   	agents {
+	   		MOAgent "Drone"{
+	   			topic "drone"
+	   			sync true
+	   			eClass "dronology.Drone"
+	   			server localServer
+	   			elements {
+	   				MOProperty "operationmode" {
+	   					topic "operationmode"
+	   					sync true
+	   					eClass "dronology.Operationmode"
+	   				},
+	   				MOProperty "dronestate" {
+	   					topic "dronestate"
+	   					sync true
+	   					eClass "dronology.Dronestate"
+	   				},
+	   				MOProperty "dronecommand" {
+	   					topic "dronecommand"
+	   					sync true
+	   					eClass "dronology.Dronecommand"
+	   				},
+	   				MOProperty "flightcontrollerdata" {
+	   					topic "flightcontrollerdata"
+	   					sync true
+	   					eClass "dronology.FlightControllerData"
+	   				},
+	   				MOProperty "flightplan" {
+	   					topic "flightplan"
+	   					sync true
+	   					eClass "dronology.FlightPlan"
+	   				},
+	   				MOProperty "startupchecks" {
+	   					topic "startupchecks"
+	   					sync true
+	   					eClass "dronology.Startupchecks"
+	   				}
+	   			}
+	   			derivedproperties{
+	   				DerivedProperty "systemhealth"{
+	   					topic "systemhealth"
+	   					sync true
+	   					eClass "dronology.Systemhealth"
+	   				}
+	   			}
+	   		}
+	   	}
+	}	
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated turtlebot -->
+      <package
+            uri="http://www.lit.jku.at/grum/turtlebot"
+            class="at.jku.lit.grum.turtlebot.model.turtlebot.TurtlebotPackage"
+            genModel="model/turtlebot.genmodel"/>
+   </extension>
+
+</plugin>

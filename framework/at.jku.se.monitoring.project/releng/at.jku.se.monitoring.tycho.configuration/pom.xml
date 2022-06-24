@@ -1,0 +1,294 @@
+<project>
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>at.jku.se.monitoring.project</groupId>
+ <artifactId>at.jku.se.monitoring.tycho.configuration</artifactId>
+ <version>1.0.0-SNAPSHOT</version>
+ <packaging>pom</packaging>
+
+ <properties>
+  <tycho.version>2.7.3</tycho.version>
+  <xtext.version>2.23.0</xtext.version>
+  <maven.compiler.source>11</maven.compiler.source>
+  <maven.compiler.target>11</maven.compiler.target>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ </properties>
+ 
+ 
+ <dependencyManagement> 
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.xtext</groupId>
+			<artifactId>xtext-dev-bom</artifactId>
+			<version>${xtext.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+	</dependencies>
+</dependencyManagement> 
+
+<build>
+	<pluginManagement>
+ 		<plugins>
+ 			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+		      	<artifactId>xtend-maven-plugin</artifactId>
+		      	<version>${xtext.version}</version>
+		      	<executions>
+		        	<execution>
+			       		<goals>
+				            <goal>compile</goal>
+				            <goal>xtend-install-debug-info</goal>
+				            <goal>testCompile</goal>
+				            <goal>xtend-test-install-debug-info</goal>
+			       		</goals>
+		        	</execution>
+				</executions>
+		      	<configuration>
+		        	<outputDirectory>xtend-gen</outputDirectory>   
+		        	<encoding>UTF-8</encoding>   
+		     	</configuration> 
+		  	</plugin>
+		  	<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+						<execution>
+							<id>gen-clean</id>
+							<goals>
+								<goal>clean</goal>
+							</goals>
+							<configuration>
+								<filesets>
+									<fileset>
+										<directory>${basedir}/xtend-gen</directory>
+									</fileset>
+								</filesets>
+							</configuration>
+						</execution>
+					</executions>
+			</plugin>
+			<!--Debug Purposes -->
+			<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											build-helper-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.9.1,)
+										</versionRange>
+										<goals>
+											<goal>add-resource</goal>
+											<goal>add-source</goal>
+											<goal>add-test-resource</goal>
+											<goal>add-test-source</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.eclipse.tycho
+										</groupId>
+										<artifactId>
+											tycho-compiler-plugin
+										</artifactId>
+										<versionRange>
+											[0.23.1,)
+										</versionRange>
+										<goals>
+											<goal>compile</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.eclipse.tycho
+										</groupId>
+										<artifactId>
+											tycho-packaging-plugin
+										</artifactId>
+										<versionRange>
+											[0.23.1,)
+										</versionRange>
+										<goals>
+											<goal>build-qualifier</goal>
+											<goal>build-qualifier-aggregator</goal>
+											<goal>validate-id</goal>
+											<goal>validate-version</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>	
+				<!--End Debug Purposes -->
+ 		</plugins>
+ 	</pluginManagement> 	
+	<plugins>
+		<plugin>
+		  	<groupId>org.eclipse.tycho</groupId>
+		    <artifactId>tycho-maven-plugin</artifactId>
+		    <version>${tycho.version}</version>
+		    <extensions>true</extensions>
+   	  	</plugin>
+   	  	<plugin>
+			<groupId>org.eclipse.tycho</groupId>
+			<artifactId>tycho-source-plugin</artifactId>
+			<version>${tycho.version}</version>
+			<executions>
+				<execution>
+					<id>plugin-source</id>
+					<goals>
+						<goal>plugin-source</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+		<plugin>
+			<groupId>org.eclipse.tycho</groupId>
+			<artifactId>tycho-p2-plugin</artifactId>
+			<version>${tycho.version}</version>
+			<executions>
+				<execution>
+					<id>attach-p2-metadata</id>
+					<phase>package</phase>
+					<goals>
+						<goal>p2-metadata</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+				
+<!-- 		Include the Sources -->
+<!-- 		<plugin> -->
+<!-- 			<groupId>org.eclipse.tycho.extras</groupId> -->
+<!-- 			<artifactId>tycho-source-feature-plugin</artifactId> -->
+<!-- 			<version>${tycho.version}</version> -->
+<!-- 			<executions> -->
+<!-- 				<execution> -->
+<!-- 					<id>source-feature</id> -->
+<!-- 					<phase>package</phase> -->
+<!-- 					<goals> -->
+<!-- 						<goal>source-feature</goal> -->
+<!-- 					</goals> -->
+<!-- 				</execution> -->
+<!-- 			</executions> -->
+<!-- 		</plugin> -->
+<!-- 		<plugin> -->
+<!-- 			<groupId>org.eclipse.tycho.extras</groupId> -->
+<!-- 			<artifactId>tycho-source-feature-plugin</artifactId> -->
+<!-- 			<version>${tycho.version}</version> -->
+<!-- 			<executions> -->
+<!-- 				<execution> -->
+<!-- 					<id>source-feature</id> -->
+<!-- 					<phase>package</phase> -->
+<!-- 					<goals> -->
+<!-- 						<goal>source-feature</goal> -->
+<!-- 					</goals> -->
+<!-- 				</execution> -->
+<!-- 			</executions> -->
+<!-- 		</plugin> -->
+<!-- 	End	Include the Sources -->	
+		<!--Enable the replacement of the SNAPSHOT version in the final product configuration-->
+   	  	<plugin>
+	        <groupId>org.eclipse.tycho</groupId>
+	            <artifactId>tycho-packaging-plugin</artifactId>
+	             <executions>
+	              <execution>
+	                <phase>package</phase>
+	                <id>package-feature</id>
+	                    <configuration>
+	                        <finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName>
+	                    </configuration>
+	            </execution>
+	        </executions>
+	    </plugin> 
+	    
+		<plugin>
+			<groupId>org.eclipse.xtend</groupId>
+			<artifactId>xtend-maven-plugin</artifactId>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-clean-plugin</artifactId>
+		</plugin>
+<!-- 		<plugin> -->
+<!-- 			<groupId>org.eclipse.m2e</groupId> -->
+<!-- 			<artifactId>lifecycle-mapping</artifactId> -->
+<!-- 		</plugin> -->
+    	<plugin>
+		    <groupId>org.eclipse.tycho</groupId>
+		    <artifactId>target-platform-configuration</artifactId>
+		    <version>${tycho.version}</version>
+		    <configuration>    	
+		    	<!-- Activates the Target Definition Platform -->
+		    	<target> 
+		        <artifact>
+		            <groupId>at.jku.se.monitoring.project</groupId>
+		            <artifactId>at.jku.se.monitoring.target</artifactId>
+		            <version>1.0.0-SNAPSHOT</version>
+		        </artifact>
+		    	</target>
+    			<!-- End -->
+    	
+			     <environments>
+			      <environment>
+			       <os>linux</os>
+			       <ws>gtk</ws>
+			       <arch>x86_64</arch>
+			      </environment>      
+			      <environment>
+			       <os>win32</os>
+			       <ws>win32</ws>
+			       <arch>x86_64</arch>
+			      </environment>
+			      <environment>
+			       <os>macosx</os>
+			       <ws>cocoa</ws>
+			       <arch>x86_64</arch>
+			      </environment>
+			     </environments>
+     
+     			<dependency-resolution>
+						<extraRequirements>
+							<requirement>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.xtext.logging</id>
+								<versionRange>1.2.15</versionRange>
+							</requirement>
+							<!-- to get the org.eclipse.osgi.compatibility.state plugin if the target 
+								platform is Luna or later. (backward compatible with kepler and previous 
+								versions) see https://bugs.eclipse.org/bugs/show_bug.cgi?id=492149 -->
+								
+								
+							
+						</extraRequirements>
+				</dependency-resolution>     
+    		</configuration>
+   </plugin>
+  </plugins> 
+  
+ </build>
+</project>

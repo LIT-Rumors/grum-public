@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="query.DroneSystemQueries" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:query.DroneSystemQueries" id="query.DroneSystemQueries">
+      <query-specification fqn="query.altitudeLimit"/>
+      <query-specification fqn="query.batteryLevel"/>
+      <query-specification fqn="query.speedLimit"/>
+      <query-specification fqn="query.startupCheckSystemStatus"/>
+      <query-specification fqn="query.startupCheckArming"/>
+      <query-specification fqn="query.waypointCheck"/>
+      <query-specification fqn="query.satGPSCheck"/>
+      <query-specification fqn="query.satGPSCheckOK"/>
+    </group>
+  </extension>
+</plugin>

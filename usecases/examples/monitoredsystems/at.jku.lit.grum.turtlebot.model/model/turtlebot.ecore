@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="turtlebot" nsURI="http://www.lit.jku.at/grum/turtlebot" nsPrefix="turtlebot">
+  <eClassifiers xsi:type="ecore:EClass" name="BatteryStatus" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="voltage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="percentage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="powerSupplyTemperature"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JointState" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="effortLeftJoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="effortRightJoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MagneticField" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="z" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VersionInfo" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hardware" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firmware" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="software" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Velocity" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="partsPerMillion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Odometry" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="movedDistance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Diagnostics" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="levelOfOperationIMUSensor"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="levelOfOperationActuator"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="levelOfOperationLidarSensor"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="levelOfOperationPowerSystem"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="levelOfOperationAnalogButton"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorState" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="illumination" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cliff" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LaserScan" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="smallestRange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdableElement" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TurtleBot" eSuperTypes="#//IdableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="batterystatus" lowerBound="1"
+        eType="#//BatteryStatus" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="velocity" lowerBound="1"
+        eType="#//Velocity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diagnostics" lowerBound="1"
+        eType="#//Diagnostics" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jointstate" lowerBound="1"
+        eType="#//JointState" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="magneticfield" lowerBound="1"
+        eType="#//MagneticField" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensorstate" lowerBound="1"
+        eType="#//SensorState" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versioninfo" lowerBound="1"
+        eType="#//VersionInfo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensor" lowerBound="1"
+        eType="#//Sensor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="odometry" lowerBound="1"
+        eType="#//Odometry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="laserscan" lowerBound="1"
+        eType="#//LaserScan" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BotSystem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="turtlebots" upperBound="-1"
+        eType="#//TurtleBot" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

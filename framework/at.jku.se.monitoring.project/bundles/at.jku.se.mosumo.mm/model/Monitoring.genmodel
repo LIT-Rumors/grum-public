@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/at.jku.se.mosumo.mm/src" modelPluginID="at.jku.se.mosumo.mm"
+    modelName="Monitoring" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>Monitoring.ecore</foreignModel>
+  <genPackages prefix="Monitoring" disposableProviderFactory="true" ecorePackage="Monitoring.ecore#/">
+    <genClasses image="false" ecoreClass="Monitoring.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Monitoring.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Monitoring.ecore#//MonitorableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Monitoring.ecore#//MonitorableElement/topic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Monitoring.ecore#//MonitorableElement/sync"/>
+    </genClasses>
+    <genClasses ecoreClass="Monitoring.ecore#//MOAgent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MOAgent/eClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MOAgent/elements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MOAgent/server"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MOAgent/derivedproperties"/>
+    </genClasses>
+    <genClasses ecoreClass="Monitoring.ecore#//MOConfig">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Monitoring.ecore#//MOConfig/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Monitoring.ecore#//MOConfig/namespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MOConfig/servers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MOConfig/defaultServer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Monitoring.ecore#//MOConfig/projectName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MOConfig/ePackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MOConfig/system"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Monitoring.ecore#//MOElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MOElement/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="Monitoring.ecore#//MOProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MOProperty/eClass"/>
+    </genClasses>
+    <genClasses ecoreClass="Monitoring.ecore#//MOValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MOValue/eAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="Monitoring.ecore#//Server">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Monitoring.ecore#//Server/connectionURL"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Monitoring.ecore#//Server/connectionOptions"/>
+    </genClasses>
+    <genClasses ecoreClass="Monitoring.ecore#//ConnectionOptions">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Monitoring.ecore#//ConnectionOptions/automaticReconnect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Monitoring.ecore#//ConnectionOptions/cleanSession"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Monitoring.ecore#//ConnectionOptions/connectionTimeOut"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Monitoring.ecore#//ConnectionOptions/setMaxInflight"/>
+    </genClasses>
+    <genClasses ecoreClass="Monitoring.ecore#//DerivedProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Monitoring.ecore#//DerivedProperty/eClass"/>
+    </genClasses>
+    <genClasses ecoreClass="Monitoring.ecore#//MoSystem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MoSystem/eClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Monitoring.ecore#//MoSystem/agents"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

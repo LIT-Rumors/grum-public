@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="query.PicarSystemQueries" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:query.PicarSystemQueries" id="query.PicarSystemQueries">
+      <query-specification fqn="query.checkOperationMode"/>
+      <query-specification fqn="query.checkDrivingDistane"/>
+    </group>
+  </extension>
+</plugin>

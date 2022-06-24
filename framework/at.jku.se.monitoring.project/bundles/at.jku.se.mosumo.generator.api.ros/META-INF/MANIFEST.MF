@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Grum Probe Generator ROS PythonAPI
+Bundle-SymbolicName: at.jku.se.mosumo.generator.api.ros;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: at.jku.se.mosumo.robot.generator
+Require-Bundle: org.eclipse.jdt.core,
+ at.jku.se.mosumo.mm,
+ org.eclipse.equinox.common,
+ org.eclipse.core.resources,
+ at.jku.mosumo.generator.framework,
+ org.eclipse.core.commands,
+ org.eclipse.ui.workbench,
+ org.eclipse.jface,
+ org.eclipse.osgi;bundle-version="3.16.0",
+ org.eclipse.jdt.launching;bundle-version="3.18.0",
+ org.eclipse.core.runtime;bundle-version="3.19.0",
+ at.jku.se.mosumo.monitoring.util;bundle-version="1.0.0",
+ at.jku.se.mosumo.tools.logging;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-Vendor: LITRumors

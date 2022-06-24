@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monitoringmm:MOConfig
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:monitoringmm="http://www.se.jku.at/mosumo/metamodel"
+    xsi:schemaLocation="http://www.se.jku.at/mosumo/metamodel ../../at.jku.se.mosumo.metamodel/model/monitoringmm.ecore"
+    name="Dronology"
+    namespace="at.jku.se.mosumo.dronology.gen.api">
+  <agents name="Drone" topic="drone">
+    <eclass href="dronology.ecore#//Drone"/>
+    <elements xsi:type="monitoringmm:MOProperty" name="Dronestate" topic="State">
+      <properties xsi:type="monitoringmm:MOProperty" name="Coordinate">
+        <eclass href="dronology.ecore#//LLACoordinate"/>
+      </properties>
+      <properties xsi:type="monitoringmm:MOProperty" name="BatteryStatus">
+        <eclass href="dronology.ecore#//BatteryStatus"/>
+      </properties>
+      <eclass href="dronology.ecore#//Dronestate"/>
+    </elements>
+    <elements xsi:type="monitoringmm:MOProperty" name="Dronecommand" topic="Command">
+      <eclass href="dronology.ecore#//Dronecommand"/>
+    </elements>
+  </agents>
+</monitoringmm:MOConfig>

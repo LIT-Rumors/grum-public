@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration name="jiraparser" packages="net.mv.logging">
+	<properties>
+
+		<property name="net.mv.filename">parser</property>
+		<property name="pattern">%d{yyyy-MM-dd HH:mm:ss.SSS}[%-5.8p] %-20M
+			|%-5C:%L | %msg%n</property>
+
+	</properties>
+	<appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%-8p] %-30M @ (%F:%L) %m%n" />
+
+			<Filters>
+				<ThresholdFilter level="HW_INFO" onMatch="DENY"
+					onMismatch="ACCEPT" />
+			</Filters>
+
+		</Console>
+
+
+
+		<File name="RollingFile"
+			fileName="logs/parser.log">
+		
+			<Filters>
+				<ThresholdFilter level="HW_INFO" onMatch="DENY"
+					onMismatch="ACCEPT" />
+			</Filters>
+
+		</File>
+
+
+
+	</appenders>
+	<loggers>
+		<root level="TRACE"> <!-- We log everything -->
+			<appender-ref ref="Console" level="INFO" /> <!-- To console -->
+			<appender-ref ref="RollingFile" level="TRACE" /> <!-- And to a rotated file -->
+		</root>
+	</loggers>
+</configuration>

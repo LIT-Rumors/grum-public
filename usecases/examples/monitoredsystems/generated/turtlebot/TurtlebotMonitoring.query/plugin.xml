@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="query.BotSystemQueries" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:query.BotSystemQueries" id="query.BotSystemQueries">
+      <query-specification fqn="query.maxVelocity"/>
+      <query-specification fqn="query.minBatteryLevel"/>
+      <query-specification fqn="query.batteryVoltage"/>
+      <query-specification fqn="query.powerSupplyStatus"/>
+      <query-specification fqn="query.diagnosticsError"/>
+      <query-specification fqn="query.co2value"/>
+      <query-specification fqn="query.distanceValue"/>
+    </group>
+  </extension>
+</plugin>

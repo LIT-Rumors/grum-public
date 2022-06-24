@@ -1,0 +1,25 @@
+package query;
+
+import "http://www.lit.jku.at/grum/picar"
+import "http://www.eclipse.org/emf/2002/Ecore"
+import java query.util.DistanceUtil
+
+pattern checkOperationMode(car : Picar, operationmode : EString) {
+	Picar.status.operationmode(car, operationmode);
+	check(operationmode == 'ERROR');
+}
+
+pattern checkDrivingDistane(car : Picar, latstart : java
+Double, lonstart : java Double, altstart : java Double, latcur : java
+Double, loncur : java Double, altcur : java Double, max_distance : java
+Double) {
+	Picar.startlocation.lat(car, latstart);
+	Picar.startlocation.lon(car, lonstart);
+	Picar.startlocation.alt(car, altstart);
+	Picar.location.lat(car, latcur); 
+	Picar.location.lon(car, loncur);
+	Picar.location.alt(car, altcur); 
+	Picar.geofence_range(car, max_distance);
+	check(DistanceUtil.testDistance(latstart, lonstart, altstart, latcur, loncur, altcur)
+	> max_distance);
+} 
