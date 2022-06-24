@@ -57,7 +57,7 @@ GRuM generates a [template class (``%project_name%ViatraQueryExecutor``)](/useca
 
 Additionally, for both the Dronology and TurtleBot system, we are using Complex Event Processing with [Esper](https://www.espertech.com/esper) for additional (temporal) constraints.
 
-The [project](/examples/misc/at.jku.lit.grum.extensions.esper) can be easily extended an new CEP Rules can be added for checking additional properties.
+The [project](/usecases/examples/misc/at.jku.lit.grum.extensions.esper) can be easily extended an new CEP Rules can be added for checking additional properties.
 
 
 
