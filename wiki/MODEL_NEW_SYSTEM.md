@@ -4,9 +4,9 @@
 For Demo purposes, we have created a simple example using a [PiCar](https://www.sunfounder.com/products/raspberrypi-sensor-car) (Raspberry Pi powered - Python controllable car)
 In the following we describe each step to get the example up and running.
 
-- [Modeling Project](/examples/monitoredsystems/at.jku.lit.grum.picar.model): ``at.jku.lit.grum.picar.model``
+- [Modeling Project](/usecases/examples/monitoredsystems/at.jku.lit.grum.picar.model): ``at.jku.lit.grum.picar.model``
 
-- Generated GRuM Projects: [here](/examples/monitoredsystems/generated/picar)
+- Generated GRuM Projects: [here](/usecases/examples/monitoredsystems/generated/picar)
 
 
 <img src="https://user-images.githubusercontent.com/24531486/172547924-d5d82048-fb8c-4123-8d5c-c377f6a78898.jpg" width="400" />
@@ -20,7 +20,7 @@ We provide an Eclipse Update Site to install all necessary components - Please s
 
 The ecore model represents the  ``Domain Model Fragment`` containing the relevant monitoring Information of the PiCar System.
 
-<img src="https://github.com/LIT-Rumors/grum/blob/grum_v1/wiki/images/ecore_picar.png" width="600" />
+<img src="https://github.com/LIT-Rumors/grum/blob/grum-public/wiki/images/ecore_picar.png" width="600" />
 
 When creating the DMF 2 things need to be considered:
 
@@ -48,7 +48,7 @@ In the genmodel use "Generate All" and Eclipse will automaticall generate all pr
 
 The Weaved Monitoring Model contains the relevant information, what should be monitored, where should data be sent to, and what topic do relvant properties belong to.
 
-<img src="https://github.com/LIT-Rumors/grum/blob/grum_v1/wiki/images/weaved_picar.png" height="650" />
+<img src="https://github.com/LIT-Rumors/grum/blob/grum-public/wiki/images/weaved_picar.png" height="650" />
 
 
 
