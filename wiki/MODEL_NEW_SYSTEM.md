@@ -20,7 +20,7 @@ We provide an Eclipse Update Site to install all necessary components - Please s
 
 The ecore model represents the  ``Domain Model Fragment`` containing the relevant monitoring Information of the PiCar System.
 
-<img src="https://github.com/LIT-Rumors/grum/blob/grum-public/wiki/images/ecore_picar.png" width="600" />
+<img src="https://github.com/LIT-Rumors/grum-public/blob/main/wiki/images/ecore_picar.png" width="600" />
 
 When creating the DMF 2 things need to be considered:
 
@@ -48,7 +48,7 @@ In the genmodel use "Generate All" and Eclipse will automaticall generate all pr
 
 The Weaved Monitoring Model contains the relevant information, what should be monitored, where should data be sent to, and what topic do relvant properties belong to.
 
-<img src="https://github.com/LIT-Rumors/grum/blob/grum-public/wiki/images/weaved_picar.png" height="650" />
+<img src="https://github.com/LIT-Rumors/grum-public/blob/main/wiki/images/weaved_picar.png" height="650" />
 
 
 
