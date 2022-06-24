@@ -12,6 +12,26 @@ Early Research Publication:
 Vierhauser, M., Marah, H., Garmendia, A., Cleland-Huang, J., & Wimmer, M. (2021, May). Towards a model-integrated runtime monitoring infrastructure for cyber-physical systems. In 2021 IEEE/ACM 43rd International Conference on Software Engineering: New Ideas and Emerging Results (ICSE-NIER) (pp. 96-100). IEEE.
 
 
+## GRuM Example Systems
+
+[GRuM PiCar walkthrough instance](/wiki/MODEL_NEW_SYSTEM.md) 
+
+Framework Application [Use Case 1: Dronology (Java)](/wiki/SUM_DRONOLOGY.md) 
+
+Framework Application [Use Case 2: TurtleBot3 Robots (ROS / Python)](/wiki/SUM_TURTLEBOT.md) 
+
+## Install Grum
+   The description can be found in this page [Install Grum](/wiki/INSTALLATION.md)
+
+ ## Using the generated GRuM Monitoring Platform
+   [GRuM Platform Example](/wiki/USE_GRUM.md) 
+
+
+## Building from the Sources
+   The description can be found in this page [Building from the Sources](/wiki/BUILDING-SOURCES.md) 
+
+
+
 
 ### Framework Code:
 
