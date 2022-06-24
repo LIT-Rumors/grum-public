@@ -29,19 +29,3 @@ Framework Application [Use Case 2: TurtleBot3 Robots (ROS / Python)](/wiki/SUM_T
 
 ## Building from the Sources
    The description can be found in this page [Building from the Sources](/wiki/BUILDING-SOURCES.md) 
-
-
-
-
-### Framework Code:
-
-[Readme](/framework/README.md)
-
-
-### Use Cases:
-
-As part of our ongoing work, we have implemented Code generators for two different [use cases](/usecases/README.md)
-
-Framework Application [Use Case 1: Dronology (Java)](/usecases)
-
-Framework Application [Use Case 2: TurtleBot3 Robots (ROS / Python)](/usecases)
