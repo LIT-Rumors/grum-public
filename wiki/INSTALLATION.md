@@ -6,7 +6,7 @@ Requirements: [Java 11](https://www.oracle.com/java/technologies/javase/jdk11-ar
 
 1. Download Eclipse [2022-03](https://www.eclipse.org/downloads/packages/release/2022-03/r) or [2022-06](https://www.eclipse.org/downloads/packages/release/2022-06/r) (Eclipse IDE for Java and DSL Developers Version)
 
-2. Install the GruM Framework using the following local Update Site URL: [at.jku.se.monitoring.project/releng/at.jku.se.monitoring.update/target/repository](/at.jku.se.monitoring.project/releng/at.jku.se.monitoring.update/target/repository)
+2. Install the GruM Framework using the following local zipped Update Site: [framework/updatesite](https://github.com/LIT-Rumors/grum-public/blob/main/framework/updatesite/at.jku.se.monitoring.update.eclipse-repository-1.0.0-SNAPSHOT.zip)
 
 
 4. Instal the Ecore Diagram Editor: To be able to view and edit the ecore diagrams (*.aird-Files) this Plugin is required. In Eclipse go to Help > Install New Software > --All Available Sites-- > Modeling > Ecore Diagram Editor (SDK). 
