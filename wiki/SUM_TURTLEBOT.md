@@ -11,7 +11,7 @@
 
 ### The  TurtleBot MW:
 
-[Weaved Monitoring Model](/at.jku.se.monitoring.project/examples/monitoredsystems/at.jku.lit.grum.turtlebot.model/model/turtlebot_monitoring.mos)
+[Weaved Monitoring Model](/usecases/examples/monitoredsystems/at.jku.lit.grum.turtlebot.model/model/turtlebot_monitoring.mos)
 
 
 ### Constraints:
@@ -34,4 +34,4 @@
 
 ### The  Dronology GRuM Platform:
 
-[Generated Grum Platform](/examples/monitoredsystems/generated/turtlebot/)
+[Generated Grum Platform](/usecases//examples/monitoredsystems/generated/turtlebot/)
