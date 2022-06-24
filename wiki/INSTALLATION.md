@@ -9,8 +9,7 @@ Requirements: [Java 11](https://www.oracle.com/java/technologies/javase/jdk11-ar
 2. Install the GruM Framework using the following local zipped Update Site: [framework/updatesite](https://github.com/LIT-Rumors/grum-public/blob/main/framework/updatesite/at.jku.se.monitoring.update.eclipse-repository-1.0.0-SNAPSHOT.zip)
 
 
-4. Instal the Ecore Diagram Editor: To be able to view and edit the ecore diagrams (*.aird-Files) this Plugin is required. In Eclipse go to Help > Install New Software > --All Available Sites-- > Modeling > Ecore Diagram Editor (SDK). 
-
+4. Instal the Ecore Diagram Editor: To be able to view and edit the ecore diagrams (*.aird-Files) this Plugin is required. <br> In Eclipse go to Help > Install New Software > --All Available Sites-- > Modeling > Ecore Diagram Editor (SDK). <br>
 *(Hint: If there is an GTK binding error, (occures on Ubuntu), install these libs via terminal: libwebkit2gtk-4.0-37, libwebkit2gtk-4.0-37-gtk2 and restart Eclipse)*
 
 4. Install the [Viatra Query Engine](https://www.eclipse.org/viatra/downloads.html) - Viatra Update Site: http://download.eclipse.org/viatra/updates/release/latest
