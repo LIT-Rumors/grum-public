@@ -2,7 +2,7 @@
 
 We provide an Update Site as part of this repository.
 
-Requirements: [Java 11](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)
+Requirements: [Java 11](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html) (Make sure that the compliance level in Eclipse is set to Java 11 as well!)
 
 1. Download Eclipse [2022-03](https://www.eclipse.org/downloads/packages/release/2022-03/r) or [2022-06](https://www.eclipse.org/downloads/packages/release/2022-06/r) (Eclipse IDE for Java and DSL Developers Version)
 
