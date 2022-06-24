@@ -46,7 +46,7 @@ public class CodeGeneratorExecutor {
 	}
 
 	private static void generateQueryPlugin(MOConfig moConfig, IProgressMonitor pr) {
-		final var plugin = new BuilderProject(moConfig.getProjectName() + ".query").setPlugin(true).build();
+		final var plugin = new BuilderProject(moConfig.getProjectName() + ".query").setPlugin(true).setViatraPlugin(true).build();
 		if (plugin.exists()) {
 			return;
 		}

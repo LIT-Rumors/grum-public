@@ -16,6 +16,8 @@ import Monitoring.MOProperty;
 public class MonitoringGeneratorUtils {
 
 	public static final String MAVEN_NATURE = "org.eclipse.m2e.core.maven2Nature";
+	public static final String VIATRA_NATURE = "org.eclipse.viatra.query.projectnature";
+	public static final String XTEXT_NATURE = "org.eclipse.xtext.ui.shared.xtextNature";
 	public static final String PLUGIN_NATURE = "org.eclipse.pde.PluginNature";
 	public static final String REQUIRED_PLUGIN = "org.eclipse.pde.core.requiredPlugins";
 	public static final String MANIFEST_BUILDER = "org.eclipse.pde.ManifestBuilder";

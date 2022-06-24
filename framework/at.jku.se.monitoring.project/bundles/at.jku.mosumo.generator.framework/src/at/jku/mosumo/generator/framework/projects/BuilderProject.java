@@ -11,6 +11,7 @@ public class BuilderProject {
 	private boolean isJavaProject = false;
 	private boolean isPlugin = false;
 	private boolean isMaven = false;
+	private boolean isViatraPlugin = false;
 	private String javaSE = MonitoringGeneratorUtils.JAVA_SE_11;
 		
 	public BuilderProject(String projectName) {
@@ -37,6 +38,11 @@ public class BuilderProject {
 		return this;
 	} 
 	
+	public BuilderProject setViatraPlugin(boolean isViatraPlugin) {
+		this.isViatraPlugin = isViatraPlugin;
+		return this;
+	}
+	
 	public Project build() {
 		return new Project(this);
 	}
@@ -59,5 +65,9 @@ public class BuilderProject {
 	
 	public String getJavaSE() {
 		return javaSE;
+	}
+	
+	public boolean isViatraPlugin() {
+		return isViatraPlugin;
 	}
 }

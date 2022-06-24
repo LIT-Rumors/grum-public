@@ -36,6 +36,7 @@ public class Project {
 	private final boolean isJavaProject;
 	private final boolean isPlugin;
 	private final boolean isMaven;
+	private final boolean isViatraPlugin;
 	private final String javaSE;
 	
 	//Result parameter
@@ -49,6 +50,7 @@ public class Project {
 		this.isPlugin = builderProject.isPlugin();
 		this.isMaven = builderProject.isMaven();	
 		this.javaSE = builderProject.getJavaSE();
+		this.isViatraPlugin = builderProject.isViatraPlugin();
 	}	
 	
 	public String getProjectName() {
@@ -65,6 +67,10 @@ public class Project {
 	
 	public boolean isMaven() {
 		return isMaven;
+	}
+	
+	public boolean isViatraPlugin() {
+		return isViatraPlugin;
 	}
 	
 	public IProject createProject(IProgressMonitor monitor, boolean delete) {
@@ -127,7 +133,9 @@ public class Project {
 		            mvnSchema.setBuilderName(MonitoringGeneratorUtils.MAVEN_BUILDER);
 		            builders.add(mvnSchema);
 		        }
-		        pro.getDescription().setBuildSpec(builders.toArray(new ICommand[0]));
+		       
+		        ICommand[] buildersSpecs = builders.toArray(new ICommand[builders.size()]);
+		        pro.getDescription().setBuildSpec(buildersSpecs);
 			} catch (CoreException e) {
 				e.printStackTrace();
 			}			
@@ -184,9 +192,14 @@ public class Project {
 		if (isMaven()) {
 			listOfNatures.add(JavaCore.NATURE_ID);
 			listOfNatures.add(MonitoringGeneratorUtils.MAVEN_NATURE);
-		} else if (isPlugin()) {
+		} 
+		if (isPlugin()) {
 			listOfNatures.add(JavaCore.NATURE_ID);
 			listOfNatures.add(MonitoringGeneratorUtils.PLUGIN_NATURE);
+		}
+		if (isViatraPlugin()) {
+			listOfNatures.add(MonitoringGeneratorUtils.VIATRA_NATURE);
+			listOfNatures.add(MonitoringGeneratorUtils.XTEXT_NATURE);
 		}
 		return listOfNatures.toArray(new String[0]);
 	}
