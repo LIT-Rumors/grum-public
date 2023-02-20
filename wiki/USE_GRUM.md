@@ -19,6 +19,9 @@ To run the Platform execute the class ``DigitalTwinRunner``
 - ``%project_name%.middleware``
 
 Contains the generated code for forwarding received monitoring data, constraint violations, etc.
+Topics are created for each monitorable property and can be accessed either via the middleware, or directly via the MQTT message broker.
+Topic names correspond to the ``topic`` specified in the Weaved Monitoring Model
+
 
 - ``%project_name%.service.middleware``
 
